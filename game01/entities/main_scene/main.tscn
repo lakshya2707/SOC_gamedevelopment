@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ppq6lito6tv"]
+
+[ext_resource type="Texture2D" uid="uid://cvi868ivrib3w" path="res://background-purple.png" id="1_3xipu"]
+[ext_resource type="PackedScene" uid="uid://drjewxhdwdhso" path="res://entities/player/player.tscn" id="2_5istu"]
+[ext_resource type="Texture2D" uid="uid://ih7dvhkprvux" path="res://spacepixels-0.2.0/horizontal_bar_red.png" id="3_6wgg5"]
+[ext_resource type="Script" path="res://entities/main_scene/enemy_Spawner.gd" id="4_uk1wn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st06g"]
+size = Vector2(648, 16)
+
+[node name="game_manager" type="Node2D"]
+
+[node name="Background-purple" type="Sprite2D" parent="."]
+position = Vector2(324.762, 551.497)
+scale = Vector2(-1.62146, 2.75661)
+texture = ExtResource("1_3xipu")
+
+[node name="player" parent="." instance=ExtResource("2_5istu")]
+position = Vector2(320, 1016)
+
+[node name="bar" type="Area2D" parent="."]
+position = Vector2(320, 928)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bar"]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_st06g")
+
+[node name="HorizontalBarRed" type="Sprite2D" parent="bar"]
+position = Vector2(4, 3.12866e-10)
+scale = Vector2(4.98462, -1.59999)
+texture = ExtResource("3_6wgg5")
+
+[node name="bullet" type="Node" parent="."]
+
+[node name="w_enemy" type="Node" parent="."]
+
+[node name="enemy_Spawner" type="Node2D" parent="."]
+script = ExtResource("4_uk1wn")

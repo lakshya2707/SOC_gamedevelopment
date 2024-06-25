@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba1j11kij2x0l"]
+
+[ext_resource type="Texture2D" uid="uid://bumhphmrsbctq" path="res://spacepixels-0.1.0/asteroid_grey.png" id="1_85eco"]
+[ext_resource type="Script" path="res://entities/enemy/enemy.gd" id="1_lku2s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ax4u4"]
+radius = 40.0
+height = 80.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_lku2s")
+
+[node name="AsteroidGrey" type="Sprite2D" parent="."]
+texture = ExtResource("1_85eco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ax4u4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

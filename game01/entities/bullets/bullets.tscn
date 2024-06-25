@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmow6mlbxjesn"]
+
+[ext_resource type="Script" path="res://entities/bullets/bullets.gd" id="1_6jqfl"]
+[ext_resource type="Texture2D" uid="uid://nu0h4wjbi4bt" path="res://spacepixels-0.1.0/pixel_laser_red.png" id="1_yqnim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxlq5"]
+size = Vector2(16, 32)
+
+[node name="bullets" type="Node2D"]
+script = ExtResource("1_6jqfl")
+
+[node name="PixelLaserRed" type="Sprite2D" parent="."]
+scale = Vector2(0.989998, 1.18111)
+texture = ExtResource("1_yqnim")
+
+[node name="bullet_collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_collision"]
+shape = SubResource("RectangleShape2D_bxlq5")

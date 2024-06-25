@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drjewxhdwdhso"]
+
+[ext_resource type="Script" path="res://entities/player/player_script.gd" id="1_2oi28"]
+[ext_resource type="Texture2D" uid="uid://c1dfcew0mrav0" path="res://space_pixels_ships_stroked/ship_blue_stroked.png" id="1_et3ix"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_2oi28")
+
+[node name="ShipBlueStroked" type="Sprite2D" parent="."]
+texture = ExtResource("1_et3ix")
